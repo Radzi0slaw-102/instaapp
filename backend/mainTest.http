@@ -1,0 +1,48 @@
+POST http://localhost:3300/api/photos HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJzdXNAc3VzIiwidXNlcm5hbWUiOiJzdXMiLCJmdWxsbmFtZSI6IlN1c3BlY3Rpb24iLCJwYXNzd29yZCI6IiQyYSQxMCRBZXN3SGZaS2dVcHhTQ0hiYUR6dnAuWGNzR203RG95bUIydDh6ZTN0VVVtbHVXNGdwLkxkZSIsImNvbmZpcm1lZCI6dHJ1ZSwicHJvZmlsZVVSTCI6Imh0dHBzOi8vYXNzZXRzLnB1enpsZWZhY3RvcnkucGwvcHV6emxlLzM2OS8wMzMvb3JpZ2luYWwuanBnIiwiaWF0IjoxNjg2NjYyNzMyLCJleHAiOjE2ODY2NjM5MzJ9.TPe475iR4Yhj-gyECiZjncBIUOSBUTFLs6AhPMDPCWE
+Content-Type: multipart/form-data; boundary=----FormBoundary1234
+
+------FormBoundary1234
+Content-Disposition: form-data; name="file"; filename="input.png"
+Content-Type: image/*
+
+< ./input.png
+------FormBoundary1234
+Content-Disposition: form-data; name="album"
+Content-Type: text/plain
+
+album3
+------FormBoundary1234
+Content-Disposition: form-data; name="tags"
+Content-Type: text/plain
+
+{ "tags": ["tag1", "tag2"] }
+------FormBoundary1234
+Content-Disposition: form-data; name="description"
+Content-Type: text/plain
+
+Lorem Ipsum
+------FormBoundary1234
+### POST - nowe dane
+GET http://localhost:3300/api/photos HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ1c2VyMUBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InVzZXIxIiwiZnVsbG5hbWUiOiJVc2VyT25lIiwicGFzc3dvcmQiOiIkMmEkMTAkZVdpWWtKOENhTlJXVU5FZTVNYW4vdWRyUm0xWW03bHlZcWM1ZjI2WnYveXJCaU85aFozbWkiLCJjb25maXJtZWQiOnRydWUsInByb2ZpbGVVUkwiOiJEOlxcU3prb2xuZVxcS2xhc2EgNFxcaW5zdGFhcHBcXGJhY2tlbmRcXHByb2ZpbGVzXFx1c2VyMS5wbmciLCJpYXQiOjE2ODY2Njc1NDIsImV4cCI6MTY4NjY2ODc0Mn0.e2GTH7dcQpZ0hy3FBrBvDzUmLPIUJOi0-m_siTNrvfc
+### GET - pobierz wszystkie dane
+GET http://localhost:3300/api/photos/1 HTTP/1.1
+### GET - pobierz jeden element wg id
+GET http://localhost:3300/api/photos/user1/useryay HTTP/1.1
+### GET - pobierz jeden element wg id
+DELETE http://localhost:3300/api/photos/1 HTTP/1.1
+### DELETE - usuń wg id
+PATCH http://localhost:3300/api/photos/id HTTP/1.1
+content-type: application/json
+
+{
+    "id": 10,
+    "title": "React",
+    "level": "trudne",
+    "completed": true
+}
+### PATCH - updatuj wg id
+GET http://localhost:3300/api/photos/albums HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ1c2VyMUBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InVzZXIxIiwiZnVsbG5hbWUiOiJVc2VyT25lIiwicGFzc3dvcmQiOiIkMmEkMTAkcGRpMkVlZloxQjhIUWlyUHVWQXpGT1Z0WWVKVzhKWDc1bVlGMGR6dFpWTmNnSktEOWY5TEsiLCJjb25maXJtZWQiOnRydWUsInByb2ZpbGVVUkwiOiJEOlxcU3prb2xuZVxcS2xhc2EgNFxcaW5zdGFhcHBcXGJhY2tlbmRcXHByb2ZpbGVzXFx1c2VyMS5wbmciLCJpYXQiOjE2ODY0OTA0ODIsImV4cCI6MTY4NjQ5MTY4Mn0.MO-mgPn07mOt0VFCl-EegRq8ZjhA1c8RLwq75-9Z_W4
+### otrzymanie listy albumów

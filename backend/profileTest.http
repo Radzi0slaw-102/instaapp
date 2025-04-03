@@ -1,0 +1,17 @@
+GET http://localhost:3300/api/profile HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6IsSExJgiLCJmdWxsTmFtZSI6IsSYxIQiLCJlbWFpbCI6ImFlLmVhQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJEI4cE8xRGZ6bi51NzFoWnJTY0xuaGU2bmhBUlhNZlUzLjdWN09IeE92aGp5QkZCeGh3enJxIiwiaWF0IjoxNjg1NDQ3NzcwLCJleHAiOjE2ODU0NDc4MzB9.seHrJ2YEdqiNRwwc100pFwSw3ZA3Ho1I44AAYMh7EsA
+###pobranie danych usera do wyświetlenia w profilu
+GET http://localhost:3300/api/profile/user1 HTTP/1.1
+###pobranie zdjęcia profilowego
+PATCH http://localhost:3300/api/profile HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJ1c2VyMUBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InVzZXIxIiwiZnVsbG5hbWUiOiJVc2VyT25lIiwicGFzc3dvcmQiOiIkMmEkMTAkcGRpMkVlZloxQjhIUWlyUHVWQXpGT1Z0WWVKVzhKWDc1bVlGMGR6dFpWTmNnSktEOWY5TEsiLCJjb25maXJtZWQiOnRydWUsInByb2ZpbGVVUkwiOiJEOlxcU3prb2xuZVxcS2xhc2EgNFxcaW5zdGFhcHBcXGJhY2tlbmRcXHByb2ZpbGVzXFx1c2VyMS5wbmciLCJpYXQiOjE2ODY0OTA0ODIsImV4cCI6MTY4NjQ5MTY4Mn0.MO-mgPn07mOt0VFCl-EegRq8ZjhA1c8RLwq75-9Z_W4
+Content-Type: application/json
+
+{
+    "username": "ae",
+    "fullname": "Ae",
+    "email": "ae@gmail.com"
+}
+###aktualizacja danych usera w jego profilu
+POST http://localhost:3300/api/profile HTTP/1.1
+###wysłanie zdjęcia profilowego

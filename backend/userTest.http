@@ -1,0 +1,29 @@
+POST http://localhost:3300/api/user/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "ĄĘ",
+    "fullname": "ĘĄ",
+    "email": "ae.ea@gmail.com",
+    "password": "123123"
+}
+###register usera
+GET http://localhost:3300/api/user/register/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IsSExJgiLCJmdWxsbmFtZSI6IsSYxIQiLCJlbWFpbCI6ImFlLmVhQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJGYwWkJZcWRBV25RUDR4NlgxS0N6Ry40WFVrWVNyaXFBbHFwVzhyUkFqYVhxcS9zZkp3eVUyIiwiaWF0IjoxNjg2MjIxNDEwLCJleHAiOjE2ODYyMjE0NzB9.OikQPe7O-1QPU_mfxu6kbV2gxP-V6jMsBDvEpWcUeZA HTTP/1.1
+###user potwierdza rejestrację konta z użyciem tokena
+POST http://localhost:3300/api/user/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "asd@asd",
+    "password": "asd"
+}
+###logowanie z odesłaniem tokena po zalogowaniu - od tej pory każde żądanie zawiera token
+GET http://localhost:3300/api/users HTTP/1.1
+###json all users - funkcja pomocnicza dla testów
+POST http://localhost:3300/api/token HTTP/1.1
+Content-Type: text/plain
+
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IsSExJgiLCJmdWxsbmFtZSI6IsSYxIQiLCJlbWFpbCI6ImFlLmVhQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJGYwWkJZcWRBV25RUDR4NlgxS0N6Ry40WFVrWVNyaXFBbHFwVzhyUkFqYVhxcS9zZkp3eVUyIiwiaWF0IjoxNjg2MjIxNDEwLCJleHAiOjE2ODYyMjE0NzB9.OikQPe7O-1QPU_mfxu6kbV2gxP-V6jMsBDvEpWcUeZA"
+###sprawdzanie tokenu przy załadowywaniu strony
+GET http://localhost:3300/api/user/logout HTTP/1.1
+###wylogowanie
